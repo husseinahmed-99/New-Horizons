@@ -1,0 +1,11 @@
+.navbar-brand img {
+  margin-right: 10px;
+}
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.btn {
+  font-size: 0.9rem;
+  padding: 5px 15px;
+}
