@@ -31,24 +31,53 @@
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/">Home</a>
+        <li class="nav-item" style="cursor: pointer">
+          <a
+            class="nav-link"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/trips">Trips</a>
+        <li class="nav-item" style="cursor: pointer">
+          <a
+            class="nav-link"
+            routerLink="/transportation"
+            routerLinkActive="active"
+            >Transportation</a
+          >
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/transportation">Transportation</a>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" routerLink="/trips" routerLinkActive="active"
+            >Trips</a
+          >
+        </li>
+        <li class="nav-item" style="cursor: pointer">
+          <a class="nav-link" routerLink="/trips" routerLinkActive="active"
+            >About Us</a
+          >
         </li>
       </ul>
 
       <!-- Login/Signup buttons -->
       <div class="d-flex">
-        <button class="btn btn-outline-primary me-2" routerLink="/login">
+        <button
+          class="btn btn-outline-primary me-2"
+          routerLink="/authentication"
+          [queryParams]="{ mode: 'login' }"
+        >
           Login
         </button>
-        <button class="btn btn-primary" routerLink="/signup">Sign Up</button>
+        <button
+          class="btn btn-primary"
+          routerLink="/authentication"
+          [queryParams]="{ mode: 'signup' }"
+        >
+          Sign Up
+        </button>
       </div>
     </div>
   </div>
+  <!-- https://goofy-plow-20a.notion.site/Interview-Questions-14f68d98267c807d8bdfc1e12b7b443d -->
 </nav>

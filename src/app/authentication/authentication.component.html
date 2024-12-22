@@ -1,0 +1,131 @@
+<div class="container mt-5">
+  <!-- Sign Up Form -->
+  <div *ngIf="mode === 'signup'">
+    <form class="p-4 border rounded shadow">
+      <h3 class="mb-4">Sign Up</h3>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">First Name</label>
+        <input
+          type="text"
+          id="firstName"
+          class="form-control"
+          placeholder="Enter your first name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Last Name</label>
+        <input
+          type="text"
+          id="lastName"
+          class="form-control"
+          placeholder="Enter your last name"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone Number</label>
+        <div class="input-group">
+          <span class="input-group-text">+</span>
+          <input
+            type="tel"
+            id="phone"
+            class="form-control"
+            placeholder="Country code and phone number"
+            required
+          />
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+          />
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="showPassword = !showPassword"
+          >
+            {{ showPassword ? "Hide" : "Show" }}
+          </button>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <select id="country" class="form-select" required>
+          <option value="" disabled selected>Select your country</option>
+          <option value="US">United States</option>
+          <option value="CA">Canada</option>
+          <option value="IN">India</option>
+          <option value="GB">United Kingdom</option>
+          <!-- Add more countries as needed -->
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+      <div class="mt-3 text-center">
+        <a href="#" class="btn btn-outline-primary me-2"
+          >Sign Up with Facebook</a
+        >
+        <a href="#" class="btn btn-outline-danger me-2">Sign Up with Gmail</a>
+        <a href="#" class="btn btn-outline-dark">Sign Up with X</a>
+      </div>
+    </form>
+  </div>
+
+  <!-- Login Form -->
+  <div *ngIf="mode === 'login'">
+    <form class="p-4 border rounded shadow">
+      <h3 class="mb-4">Login</h3>
+      <div class="mb-3">
+        <label for="loginEmail" class="form-label">Email</label>
+        <input
+          type="email"
+          id="loginEmail"
+          class="form-control"
+          placeholder="Enter your email"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="loginPassword" class="form-label">Password</label>
+        <div class="input-group">
+          <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="loginPassword"
+            class="form-control"
+            placeholder="Enter your password"
+            required
+          />
+          <button
+            type="button"
+            class="btn btn-outline-secondary"
+            (click)="showPassword = !showPassword"
+          >
+            {{ showPassword ? "Hide" : "Show" }}
+          </button>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Login</button>
+      <div class="mt-3 text-center">
+        <a href="#" class="btn btn-outline-primary me-2">Login with Facebook</a>
+        <a href="#" class="btn btn-outline-danger me-2">Login with Gmail</a>
+        <a href="#" class="btn btn-outline-dark">Login with X</a>
+      </div>
+    </form>
+  </div>
+</div>
